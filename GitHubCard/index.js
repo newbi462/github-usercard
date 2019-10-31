@@ -22,12 +22,13 @@ const toTheDom = document.querySelector('.cards');
 axios.get("https://api.github.com/users/newbi462")
 
 .then(response => {
-console.log(response);
-
+console.log(response.data);
 /*  response.data.forEach(item => {
-    const newCard = stepThree(item)
+    const newCard = stepThree(response.data)
     toTheDom.appendChild(newCard)
   });*/
+  const newCard = stepThree(response.data)
+  toTheDom.appendChild(newCard)
 })
 .catch(error => {
    console.log("The data was not returned", error)
@@ -59,7 +60,7 @@ function stepThree(object) {
 
 //  <img src={image url of user} />
   const imgUser = document.createElement('img');
-  imgUser.scr = object["avatar_url"];
+  imgUser.src = object["avatar_url"];
   divCard.appendChild(imgUser);
 
 //  <div class="card-info">
