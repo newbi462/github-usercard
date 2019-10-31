@@ -52,13 +52,18 @@ function stepThree(object) {
 //    <h3 class="name">{users name}</h3>
   const userName = document.createElement('h3'):
   userName.classList.add('name');
-  userName.textContent = object["login"];
+  userName.textContent = object["name"];
   cardInfo.appendChild(userName);
 
 //    <p class="username">{users user name}</p>
-
+  const userNameP = document.createElement('p')
+  userNameP.classList.add('username');
+  userNameP.textContent = object["login"];
+  cardInfo.appendChild(userNameP);
 
 //    <p>Location: {users location}</p>
+
+
 //    <p>Profile:
 //      <a href={address to users github page}>{address to users github page}</a>
 //    </p>
