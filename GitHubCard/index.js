@@ -62,17 +62,39 @@ function stepThree(object) {
   cardInfo.appendChild(userNameP);
 
 //    <p>Location: {users location}</p>
-
+  const userLocationP = document.createElement('p')
+  userLocationP.textContent = object["location"];
+  cardInfo.appendChild(userLocationP);
 
 //    <p>Profile:
 //      <a href={address to users github page}>{address to users github page}</a>
-//    </p>
+//    </p
+  const userLinkP = document.createElement('p')
+  cardInfo.appendChild(userLinkP);
+  const userLinkA = document.createElement('a')
+  userLinkA.href = object["html_url"];
+  userLinkP.appendChild(userLinkA);
+
+
 //    <p>Followers: {users followers count}</p>
+  const followersP = document.createElement('p')
+  followersP.textContent = object["followers"];
+  cardInfo.appendChild(followersP);
+
 //    <p>Following: {users following count}</p>
+  const followingP = document.createElement('p')
+  followingP.textContent = object["following"];
+  cardInfo.appendChild(followingP);
+
 //    <p>Bio: {users bio}</p>
+  const bioP = document.createElement('p')
+  bioP.textContent = object["bio"];
+  cardInfo.appendChild(bioP);
+
 //  </div>
 //</div>
 
+  return divCard;
 };
 
 
