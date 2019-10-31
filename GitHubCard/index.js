@@ -2,7 +2,7 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
-axios.get("https://api.github.com/users/newbi462")
+//axios.get("https://api.github.com/users/newbi462")
 
 
 /* Step 2: Inspect and study the data coming back, this is YOUR
@@ -17,6 +17,25 @@ axios.get("https://api.github.com/users/newbi462")
 /* Step 4: Pass the data received from Github into your function,
            create a new component and add it to the DOM as a child of .cards
 */
+const toTheDom = document.querySelector('.cards');
+
+axios.get("https://api.github.com/users/newbi462")
+
+.then(response => {
+console.log(response);
+
+/*  response.data.forEach(item => {
+    const newCard = stepThree(item)
+    toTheDom.appendChild(newCard)
+  });*/
+})
+.catch(error => {
+   console.log("The data was not returned", error)
+ })
+
+
+
+
 
 /* Step 5: Now that you have your own card getting added to the DOM, either
           follow this link in your browser https://api.github.com/users/<Your github name>/followers
@@ -44,13 +63,13 @@ function stepThree(object) {
   divCard.appendChild(imgUser);
 
 //  <div class="card-info">
-  const cardInfo = document.createElement('div'):
+  const cardInfo = document.createElement('div');
   cardInfo.classList.add('card-info');
   //cardInfo.textContent = object["bio"];
   divCard.appendChild(cardInfo);
 
 //    <h3 class="name">{users name}</h3>
-  const userName = document.createElement('h3'):
+  const userName = document.createElement('h3');
   userName.classList.add('name');
   userName.textContent = object["name"];
   cardInfo.appendChild(userName);
