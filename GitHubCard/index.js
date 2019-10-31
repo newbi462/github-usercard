@@ -108,6 +108,7 @@ function stepThree(object) {
   cardInfo.appendChild(userLinkP);
   const userLinkA = document.createElement('a')
   userLinkA.href = object["html_url"];
+  userLinkA.textContent = object["login"];
   userLinkP.appendChild(userLinkA);
 
 
