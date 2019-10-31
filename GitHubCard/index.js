@@ -56,6 +56,8 @@ function stepThree(object) {
   cardInfo.appendChild(userName);
 
 //    <p class="username">{users user name}</p>
+
+
 //    <p>Location: {users location}</p>
 //    <p>Profile:
 //      <a href={address to users github page}>{address to users github page}</a>
