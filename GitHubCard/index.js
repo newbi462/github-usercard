@@ -22,7 +22,7 @@ const toTheDom = document.querySelector('.cards');
 axios.get("https://api.github.com/users/newbi462")
 
 .then(response => {
-console.log(response.data);
+//console.log(response.data);
 /*  response.data.forEach(item => {
     const newCard = stepThree(response.data)
     toTheDom.appendChild(newCard)
@@ -49,6 +49,21 @@ console.log(response.data);
 */
 
 const followersArray = [];
+axios.get("https://api.github.com/users/newbi462/followers")
+.then(response => {
+  console.log(response.data[0]);
+/*  response.data.forEach(item => {
+    const newCardFollow = stepThree(response.data[item]);
+    toTheDom.appendChild(newCardFollow);
+  });*/ // odd this foreach tried to do prepend instead of chld as coded and all was undefined
+  for (let i = 0; i < response.data.length; i++) {
+    toTheDom.appendChild( stepThree(response.data[i])  );
+  }
+})
+.catch(error => {
+   console.log("The data was not returned", error)
+ })
+
 
 // Step 3: Create a function that accepts a single object as its only argument,
 // Using DOM methods and properties, create a component that will return the following DOM element:
