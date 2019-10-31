@@ -46,10 +46,15 @@ function stepThree(object) {
 //  <div class="card-info">
   const cardInfo = document.createElement('div'):
   cardInfo.classList.add('card-info');
-  cardInfo.textContent = object["bio"];
+  //cardInfo.textContent = object["bio"];
   divCard.appendChild(cardInfo);
 
 //    <h3 class="name">{users name}</h3>
+  const userName = document.createElement('h3'):
+  userName.classList.add('name');
+  userName.textContent = object["login"];
+  cardInfo.appendChild(userName);
+
 //    <p class="username">{users user name}</p>
 //    <p>Location: {users location}</p>
 //    <p>Profile:
