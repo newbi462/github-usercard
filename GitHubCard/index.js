@@ -32,7 +32,7 @@ axios.get("https://api.github.com/users/newbi462")
 })
 .catch(error => {
    console.log("The data was not returned", error)
- })
+})
 
 
 
@@ -57,7 +57,14 @@ axios.get("https://api.github.com/users/newbi462/followers")
     toTheDom.appendChild(newCardFollow);
   });*/ // odd this foreach tried to do prepend instead of chld as coded and all was undefined
   for (let i = 0; i < response.data.length; i++) {
-    toTheDom.appendChild( stepThree(response.data[i])  );
+    axios.get(response.data[i].url)
+    .then(response => {
+      toTheDom.appendChild( stepThree(response.data)  );
+    })
+    .catch(error => {
+       console.log("The data was not returned", error)
+    })
+//    toTheDom.appendChild( stepThree(response.data[i])  );
   }
 })
 .catch(error => {
