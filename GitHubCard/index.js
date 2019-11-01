@@ -105,7 +105,7 @@ function stepThree(object) {
 
 //    <p>Location: {users location}</p>
   const userLocationP = document.createElement('p')
-  userLocationP.textContent = object["location"];
+  userLocationP.textContent = `Location: ${object["location"]}`;
   cardInfo.appendChild(userLocationP);
 
 //    <p>Profile:
@@ -121,17 +121,17 @@ function stepThree(object) {
 
 //    <p>Followers: {users followers count}</p>
   const followersP = document.createElement('p')
-  followersP.textContent = object["followers"];
+  followersP.textContent = `Followers: ${object["followers"]}`;
   cardInfo.appendChild(followersP);
 
 //    <p>Following: {users following count}</p>
   const followingP = document.createElement('p')
-  followingP.textContent = object["following"];
+  followingP.textContent = `Following: ${object["following"]}`;
   cardInfo.appendChild(followingP);
 
 //    <p>Bio: {users bio}</p>
   const bioP = document.createElement('p')
-  bioP.textContent = object["bio"];
+  bioP.textContent = `Bio: ${object["bio"]}`;
   cardInfo.appendChild(bioP);
 
 //  </div>
